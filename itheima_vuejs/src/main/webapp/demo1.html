@@ -7,11 +7,24 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			{{message}} <!--vue的插值表达式，把data中定义的数据显示到此处。-->
+			{{false?"OK":"NO"}} <!--三元运算符-->
+            {{number*3.14}} <!--做数学运算-->
+            <!-- 插值表达式不支持
+            {{var a = 1;}}
+            {{if(a==10){}}}
+            -->
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		// 创建Vue对象
+		new Vue({
+			el: "#app", // 由vue接管id为app的区域
+			data:{
+			    message: "Hello Vue!!", // 注意，此处不要加分号
+                number: 100
+			}
+		});
 	</script>
 </html>
