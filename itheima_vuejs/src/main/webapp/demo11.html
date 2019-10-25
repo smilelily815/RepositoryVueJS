@@ -7,11 +7,22 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			<ul>
+				<li v-for="(key, value) in user">{{key}} === {{value}}</li>
+			</ul>
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el: "#app",
+			data: {
+			    user: {
+			        id: 1,
+					name: "刘一",
+					age: 25
+				}
+			}
+		});
 	</script>
 </html>

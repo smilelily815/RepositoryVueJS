@@ -9,13 +9,34 @@
 
 	<body>
 		<div id="app">
-			<input type="text" v-on:keydown="fun($event)">
+			<input type="text" onkeydown="fun1()"/>
+			<hr/>
+			<input type="text" v-on:keydown="fun2($event)"/>
 		</div>
 	</body>
 	<script>
 		//view model
+		new Vue({
+			el: "#app",
+			methods: {
+			    // $event 它是vue中的事件对象，和传统js中的event对象是一样的。
+			    fun2: function (event) {
+                    var keyCode = event.keyCode;
+                    if (keyCode < 48 || keyCode > 57){
+                        event.preventDefault();
+                    }
+                }
+			}
+		});
+		// 传统js键盘按下事件
+		function fun1() {
+		    // event对象和document、window对象一样，不用定义可以直接用。
+			var keyCode = event.keyCode;
+			// 0 = 48 9 = 57
+			if (keyCode < 48 || keyCode > 57){
+			    // 不让键盘按键起作用
+			    event.preventDefault();
+			}
+        }
 	</script>
-	
-	
-
 </html>

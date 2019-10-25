@@ -7,11 +7,18 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			<ul>
+				<li v-for="(item, index) in arr">{{index}} = {{item}}</li>
+			</ul>
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el: "#app",
+			data: {
+			    arr: ['北京', '上海', '深圳', '苏州', '南京']
+			}
+		});
 	</script>
 </html>

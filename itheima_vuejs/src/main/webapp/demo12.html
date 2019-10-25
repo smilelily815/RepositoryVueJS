@@ -11,18 +11,32 @@
 		<div id="app">
 			<table border="1">
 				<tr>
-					<td>序号号</td>
+					<td>序号</td>
 					<td>编号</td>
-					<td>名称</td>
-					<td>价格</td>
+					<td>姓名</td>
+					<td>年龄</td>
 				</tr>
-				
+				<tr v-for="(user, index) in users">
+					<td>{{index + 1}}</td>
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.age}}</td>
+				</tr>
 			</table>
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		new Vue({
+			el: "#app",
+			data: {
+			    users: [
+					{id: 1, name: "刘一", age: 24},
+                    {id: 10, name: "陈二", age: 30},
+                    {id: 11, name: "张三", age: 26},
+				]
+			}
+		});
 	</script>
 
 </html>
