@@ -20,29 +20,29 @@
 			},
 			beforeCreate: function() {
 				console.log(this);
-				showData('创建vue实例前', this);
+				showData('创建vue实例前[beforeCreate]', this);
 			},
 			created: function() {
-				showData('创建vue实例后', this);
+				showData('创建vue实例后[created]', this);
 			},
 			beforeMount: function() {
-				showData('挂载到dom前', this);
+				showData('挂载到dom前[beforeMount]', this);
 			},
 			mounted: function() {
-				showData('挂载到dom后', this);
+				showData('挂载到dom后[mounted]', this);
 			},
 			beforeUpdate: function() {
-				showData('数据变化更新前', this);
+				showData('数据变化更新前[beforeUpdate]', this);
 			},
 			updated: function() {
-				showData('数据变化更新后', this);
+				showData('数据变化更新后[updated]', this);
 			},
 			beforeDestroy: function() {
 				vm.test = "3333";
-				showData('vue实例销毁前', this);
+				showData('vue实例销毁前[beforeDestroy]', this);
 			},
 			destroyed: function() {
-				showData('vue实例销毁后', this);
+				showData('vue实例销毁后destroyed', this);
 			}
 		});
 
@@ -59,8 +59,8 @@
 			console.log('------------------')
 			console.log('------------------')
 		}
-		//vm.message = "good...";
-		vm.$destroy(); 
+		// vm.message = "good...";
+		vm.$destroy();
 	</script>
 
 </html>
