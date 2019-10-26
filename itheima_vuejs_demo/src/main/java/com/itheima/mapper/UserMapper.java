@@ -9,5 +9,9 @@ import java.util.List;
 @Mapper
 @Repository("userMapper")
 public interface UserMapper {
-    public List<User> queryUserList();
+    public List<User> findAll();
+
+    public User findById(Integer id);
+
+    public void updateUser(User user);
 }
